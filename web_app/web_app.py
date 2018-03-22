@@ -33,9 +33,9 @@ def csv_handler():
 
     # Insert the rows with page title and product name for each product
     for url in product_pages_urls:
-        csv_row = [url,
-                   redis.hget(url, PAGE_TITLE_FIELD),
-                   redis.hget(url, PROD_NAME_FIELD)]
+        csv_row = [url.decode('utf-8'),
+                   redis.hget(url, PAGE_TITLE_FIELD).decode('utf-8'),
+                   redis.hget(url, PROD_NAME_FIELD).decode('utf-8')]
         products.append(csv_row)
 
     create_csv_file(CSV_FILE_NAME, products)
