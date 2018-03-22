@@ -7,5 +7,8 @@ WORKDIR /crawler
 # Copy the current directory contents into the container at /web_app
 ADD . /crawler
 
+# Install any needed packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
 # Run web_app.py when the container launches
 CMD ["python3", "crawler.py"]

@@ -8,7 +8,7 @@ PROD_PGS_URLS_KEY = 'prod_pgs_urls'
 PAGE_TITLE_FIELD = 'page_title'
 PROD_NAME_FIELD = 'prod_name'
 
-STARTING_PAGE_URL = 'http://www.epocacosmeticos.com.br/'
+STARTING_PAGE_URL = 'https://www.epocacosmeticos.com.br/'
 
 CSV_FILE_NAME = 'products.csv'
 

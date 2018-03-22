@@ -10,6 +10,8 @@ services:
           memory: 50M
       restart_policy:
         condition: any
+    networks:
+      - webnet
   web_app:
     image: crawler-web-app
     deploy:

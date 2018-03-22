@@ -1,4 +1,5 @@
 .idea/
 venv/
+crawler/__pycache__/
 *.csv
 docker_stack_*
