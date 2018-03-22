@@ -1,2 +1,4 @@
 .idea/
 venv/
+*.csv
+docker_stack_*
