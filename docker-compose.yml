@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   crawler:
-    image: crawler
+    image: thiago6891/b2w-crawler
     deploy:
       replicas: 1
       resources:
@@ -13,7 +13,7 @@ services:
     networks:
       - webnet
   web_app:
-    image: crawler-web-app
+    image: thiago6891/b2w-web-app
     deploy:
       replicas: 1
       resources:
