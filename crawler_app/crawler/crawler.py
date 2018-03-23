@@ -44,7 +44,7 @@ class Crawler:
         """
         url = self._db_service.get_next_url_to_visit()
         if url:
-            self._url = url
+            self._url = url.decode('utf-8')
             return True
         else:
             return False
