@@ -1,8 +1,9 @@
 import csv
 import os
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, jsonify
 from redis import Redis, RedisError
 
+VISITED_URLS_KEY = os.getenv('VISITED_URLS_KEY')
 URLS_TO_VISIT_KEY = os.getenv('URLS_TO_VISIT_KEY')
 PROD_PGS_URLS_KEY = os.getenv('PROD_PGS_URLS_KEY')
 PAGE_TITLE_FIELD = os.getenv('PAGE_TITLE_FIELD')
@@ -40,6 +41,19 @@ def csv_handler():
 
     create_csv_file(CSV_FILE_NAME, products)
     return send_file(CSV_FILE_NAME, mimetype='text/csv', as_attachment=True)
+
+
+@app.route('/data')
+def data_handler():
+    total_products = redis.scard(PROD_PGS_URLS_KEY)
+    total_visited = redis.scard(VISITED_URLS_KEY)
+    total_to_visit = redis.scard(URLS_TO_VISIT_KEY)
+    data = {
+        'products': total_products,
+        'visited': total_visited,
+        'to_visit': total_to_visit,
+    }
+    return jsonify(data)
 
 
 def create_csv_file(file_name, rows):
