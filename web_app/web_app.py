@@ -1,19 +1,19 @@
 import csv
+import os
 from flask import Flask, render_template, send_file
 from redis import Redis, RedisError
 
-URLS_TO_VISIT_KEY = 'urls_to_visit'
-PROD_PGS_URLS_KEY = 'prod_pgs_urls'
-
-PAGE_TITLE_FIELD = 'page_title'
-PROD_NAME_FIELD = 'prod_name'
-
-STARTING_PAGE_URL = 'https://www.epocacosmeticos.com.br/'
+URLS_TO_VISIT_KEY = os.getenv('URLS_TO_VISIT_KEY')
+PROD_PGS_URLS_KEY = os.getenv('PROD_PGS_URLS_KEY')
+PAGE_TITLE_FIELD = os.getenv('PAGE_TITLE_FIELD')
+PROD_NAME_FIELD = os.getenv('PROD_NAME_FIELD')
+STARTING_PAGE_URL = os.getenv('STARTING_PAGE_URL')
+REDIS_HOST = os.getenv('REDIS_HOST')
 
 CSV_FILE_NAME = 'products.csv'
 
 # Connect to Redis
-redis = Redis(host='redis', db=0, socket_connect_timeout=2, socket_timeout=2)
+redis = Redis(REDIS_HOST)
 
 app = Flask(__name__)
 

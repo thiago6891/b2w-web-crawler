@@ -3,3 +3,4 @@ venv/
 crawler/__pycache__/
 *.csv
 docker_stack_*
+build_and_run

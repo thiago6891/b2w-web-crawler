@@ -12,6 +12,8 @@ services:
         condition: any
     networks:
       - webnet
+    env_file:
+      - .env
   web_app:
     image: thiago6891/b2w-web-app
     deploy:
@@ -26,6 +28,8 @@ services:
       - "8000:80"
     networks:
       - webnet
+    env_file:
+      - .env
   redis:
     image: redis
     ports:

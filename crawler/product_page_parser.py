@@ -20,6 +20,7 @@ class ProductPageParser(HTMLParser):
         if tag == 'meta':
             found_product_name_tag = False
 
+            # Looking for <meta property="og:title" content="...
             for key in attributes:
                 if key[0] == 'property' and key[1] == 'og:title':
                     found_product_name_tag = True
