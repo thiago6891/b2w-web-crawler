@@ -12,8 +12,8 @@ def get_next_url_mock(urls):
 
 class TestCrawler(unittest.TestCase):
     def setUp(self):
-        self._url = b'https://www.epocacosmeticos.com.br/'
-        self._urls = [self._url]
+        self._url = 'https://www.epocacosmeticos.com.br/'
+        self._urls = [self._url.encode('utf-8')]
 
         self._db = MagicMock()
         self._db.get_next_url_to_visit = self._urls.pop
