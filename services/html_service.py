@@ -1,6 +1,6 @@
 import os
-from .product_page_parser import ProductPageParser
-from .link_parser import InboundLinkParser
+from crawler.product_page_parser import ProductPageParser
+from crawler.link_parser import InboundLinkParser
 
 PAGE_KW = os.getenv('PAGE_KW')
 STARTING_PAGE_URL = os.getenv('STARTING_PAGE_URL')
