@@ -6,7 +6,7 @@ Code challenge for B2W hiring process.
 
 É necessário o Docker versão 18.03.0-ce. 
 
-Teoricamente, deve funcionar na versão 17.09 ou superior, mas não testei.
+*Teoricamente, deve funcionar na versão 17.09 ou superior, mas não testei*.
 
 ### Utilizando as Imagens do Docker Hub
 
