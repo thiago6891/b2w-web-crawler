@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   crawler:
-    image: thiago6891/b2w-crawler
+    image: b2w-crawler
     deploy:
       replicas: 3
       resources:
@@ -15,7 +15,7 @@ services:
     env_file:
       - .env
   web:
-    image: thiago6891/b2w-web
+    image: b2w-web
     deploy:
       replicas: 1
       resources:
