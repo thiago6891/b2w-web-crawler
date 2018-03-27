@@ -1,6 +1,6 @@
 # b2w-web-crawler
 
-Code challenge for B2W hiring process.
+Code challenge for the B2W hiring process.
 
 ## Instruções de Instalação
 
