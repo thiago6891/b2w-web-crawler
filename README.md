@@ -75,6 +75,26 @@ Uma possível solução talvez seja utilizar vários BDs. Um para cada site que 
 
 ***2 - Alguns sites carregam o preço através de JavaScript. Como faria para capturar esse valor?***
 
+Teria que utilizar um browser para executar o código javascript e retornar o HTML renderizado para ser tratado no código.
+
+Parece ser possível fazer isso com Python usando o módulo Selenium.
+
 ***3 - Alguns sites podem bloquear a captura por interpretar seus acessos como um ataque DDOS. Como lidaria com essa situação?***
 
+Algumas possíveis soluções preventivas seriam:
+
+- Respeitar as regras no arquivo *robots.txt* se estiver presente.
+- Inserir períodos aleatórios de *sleep* entre *requests*.
+- Usar diferentes IPs e *User-Agents* aleatoriamente.
+
+Como será possível notar no código, não implementei nenhuma dessas prevenções devido à inexperiência com crawling. *(Tive que fazer uma breve pesquisa para conseguir responder essa pergunta.)*
+
 ***4 - Um cliente liga reclamando que está fazendo muitos acessos ao seu site e aumentando seus custos com infra. Como resolveria esse problema?***
+
+Uma possível solução seria simplesmente diminuir a velocidade de ação do crawler, resultando em menos acessos.
+
+Porém, dependendo de qual informação exatamente estamos tentando extrair, talvez hajam soluções bem melhores.
+
+---
+
+*P.S.: Quero chocolate 70% no mínimo. ;)*
