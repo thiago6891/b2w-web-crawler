@@ -62,3 +62,19 @@ Caso haja interesse em reiniciar o processo de descoberta de páginas, basta del
 Para rodar os testes, vá até o diretório raiz do repositório e execute:
 
     ~$ python3 -m unittest
+
+## Questões Discursivas
+
+***1 - Agora você tem de capturar dados de outros 100 sites. Quais seriam suas estratégias para escalar a aplicação?***
+
+Acredito que a utilização do Docker já facilita essa escalação ao permitir a distribuição de vários crawlers em máquinas diferentes.
+
+Um problema em potencial que consigo enxergar na arquitetura que utilizei é o BD centralizado que pode acabar sendo um gargalo.
+
+Uma possível solução talvez seja utilizar vários BDs. Um para cada site que se deseja capturar dados.
+
+***2 - Alguns sites carregam o preço através de JavaScript. Como faria para capturar esse valor?***
+
+***3 - Alguns sites podem bloquear a captura por interpretar seus acessos como um ataque DDOS. Como lidaria com essa situação?***
+
+***4 - Um cliente liga reclamando que está fazendo muitos acessos ao seu site e aumentando seus custos com infra. Como resolveria esse problema?***
