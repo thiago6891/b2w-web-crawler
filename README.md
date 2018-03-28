@@ -1,10 +1,29 @@
-# b2w-web-crawler
+# Web Crawler
 
-Code challenge for the B2W hiring process.
+## Arquitetura
+
+A idéia da arquitetura pode ser melhor explicada por essa [figura](https://www.evernote.com/shard/s133/sh/76966c02-5e3e-4359-b1c5-1d73e692ef9a/26f43401c72d5448904941c2c3c27803).
+
+Basicamente, N *crawlers* são configurados para acessar o site em questão e usam um BD central para guardar as informações necessárias.
+
+As informações guardadas no BD são:
+
+- URLs que já foram visitadas.
+- URLs que foram encontradas, porém ainda precisam ser visitadas.
+- URLs de páginas de produtos.
+- Informações das páginas de produtos (utilizando a URL como chave de acesso).
+
+Visto que o Redis possui *Hashes* e *Sets*, me pareceu uma escolha melhor ao invés de um banco relacional.
+
+Um pequeno aplicativo web foi feito para acessar o banco, capturar as informações desejadas, e gerar o csv pedido.
+
+Além disso, o aplicativo mostra algumas informações sobre o processo de *crawling*.
+
+Para a comunicação entre as diferentes partes, Docker me pareceu uma boa escolha devido à simplicidade. (*Quem eu estou querendo enganar? Só fiz com Docker para ganhar o chocolate... gosto de 70% cacau, no mínimo. ;)* )
 
 ## Instruções de Instalação
 
-É necessário o Docker versão 18.03.0-ce. 
+É necessário o Docker versão 18.03.0-ce.
 
 *Teoricamente, deve funcionar na versão 17.09 ou superior, mas não testei*.
 
@@ -94,7 +113,3 @@ Como será possível notar no código, não implementei nenhuma dessas prevenç�
 Uma possível solução seria simplesmente diminuir a velocidade de ação do crawler, resultando em menos acessos.
 
 Porém, dependendo de qual informação exatamente estamos tentando extrair, talvez hajam soluções bem melhores.
-
----
-
-*P.S.: Quero chocolate 70% no mínimo. ;)*
